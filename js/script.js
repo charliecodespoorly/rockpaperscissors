@@ -12,11 +12,9 @@
 $(document).ready(function (){
     $("#shoot").click(function() {
       
-      var userPlayString = $("#input").val().toLowercase();
-      var userPlay = 0;
-      alert("BRUH");
-      console.log(userPlayString);
-
+      var userPlayString = $("#input").val();
+      userPlayString = userPlayString.toLowerCase();
+      var userPlay;
 
       switch(userPlayString){
         case "rock":
@@ -29,5 +27,7 @@ $(document).ready(function (){
           userPlay = 2;
           break;
       }
+
+      console.log(userPlay);
     });
 });
