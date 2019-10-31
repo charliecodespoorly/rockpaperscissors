@@ -10,7 +10,24 @@
 // DOCUMENT READY FUNCTION BELOW
 
 $(document).ready(function (){
-    $("shoot").click(function() {
-        alert("test");
+    $("#shoot").click(function() {
+      
+      var userPlayString = $("#input").val().toLowercase();
+      var userPlay = 0;
+      alert("BRUH");
+      console.log(userPlayString);
+
+
+      switch(userPlayString){
+        case "rock":
+          userPlay = 0;
+          break;
+        case "paper":
+          userPlay = 1;
+          break;
+        case "scissors":
+          userPlay = 2;
+          break;
+      }
     });
 });
