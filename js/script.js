@@ -9,3 +9,8 @@
 
 // DOCUMENT READY FUNCTION BELOW
 
+$(document).ready(function (){
+    $("shoot").click(function() {
+        alert("test");
+    });
+});
