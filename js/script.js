@@ -5,7 +5,8 @@
 //GLOBAL VARIABLES
 /* global $ */
 
-
+var totalUserWins = 0;
+var totalComputerWins = 0;
 
 // DOCUMENT READY FUNCTION BELOW
 
@@ -35,7 +36,7 @@ $(document).ready(function (){
 
 
         default:
-          alert("this is not an option, please enter rock, paper, or scissors");
+          alert("this is not an option, please enter rock, paper, scissors, lizard, or spock");
       }
 
       var computerPlay = Math.floor(Math.random()*5);
@@ -64,27 +65,37 @@ $(document).ready(function (){
         humanWins = 2;
         $("#result").text("You win!");
         console.log("You win!");
+        totalUserWins++;
+        $("#numUserWins").text(`You have won ${totalUserWins} time${totalUserWins===1?'':'s'}`);
+        //First expression in string inserts number of wins, second pluralizes time when necessary
       }
       else if((userPlay+1)%5 === computerPlay){
         humanWins = 0;
         $("#result").text("You lose!");
         console.log("You lose!");
+        totalComputerWins++;
+        $("#numComputerWins").text(`The computer has won ${totalComputerWins} time${totalComputerWins===1?'':'s'}`);
       }
 
       if((computerPlay + 2)%5 === userPlay){
         humanWins = 0;
         $("#result").text("You lose!");
-        console.log("You win!");
+        console.log("You lose!");
+        totalComputerWins++;
+        $("#numComputerWins").text(`The computer has won ${totalComputerWins} time${totalComputerWins===1?'':'s'}`);
       }
       else if((userPlay+2)%5 === computerPlay){
         humanWins = 2;
         $("#result").text("You win!");
-        console.log("You lose!");
+        console.log("You win!");
+        totalUserWins++;
+        $("#numUserWins").text(`You have won ${totalUserWins} time${totalUserWins===1?'':'s'}`);
       }
       else if(userPlay === computerPlay){
         humanWins = 1;
         $("#result").text("Tie!");
         console.log("Tie!");
       }
+      console.log(`hello ${2===1?'':'s'}`);
     });
 });
